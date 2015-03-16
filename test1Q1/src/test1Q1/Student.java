@@ -1,12 +1,18 @@
 package test1Q1;
 
 public class Student extends Person {
-	final String status = "freshman";
+	
+	private eStatus status;
 	
 	public Student() {
 	}
+	
+	public Student(int year) {
+		year--;
+		this.status = eStatus.values()[year];
+	}
 
-	public String getStatus() {
+	public eStatus getStatus() {
 		return status;
 	}
 	
@@ -15,5 +21,4 @@ public class Student extends Person {
 		return "The class is Student, and the student's name is " + super.getName();
 	}
 	
-
 }
